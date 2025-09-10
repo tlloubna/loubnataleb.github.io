@@ -43,20 +43,7 @@ Mon parcours m’a permis de travailler sur des projets allant de la **planifica
 
 ---
 
-## 🧰 Compétences techniques
 
-- **Langages** : Python, Java, C++, C, R, MATLAB  
-- **Outils SIG & 3D** : QGIS, CloudCompare  
-- **IA & ML** : TensorFlow, PyTorch, NumPy, CNN, LLM, réseaux de neurones  
-- **Gestion de versions** : Git
-
----
-
-## 🌍 Langues
-
-- Français : Courant (B2 – DELF)  
-- Anglais : Courant (B2 – Linguaskill)  
-- Arabe : Langue maternelle  
 
 ---
 
