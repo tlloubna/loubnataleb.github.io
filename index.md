@@ -73,6 +73,6 @@ My role included:
 - 1st place for **communication**  
 - 2nd place for **coding part**  
 
-📄 [View presentation (PDF)](/assets/Projects/SafeWay/Bonjour!.pdf)  
-💻 [Access SafeWay project code](assets/Projects/SafeWay/safeway_demo2)  
-![Process Flow](/assets/Projects/SafeWay/vd_safeway (online-video-cutter.com) (1).mp4)
+📄 [View presentation (PDF)](/assets/Projects/SafeWay/presentationSafeWay.pdf)  
+💻 [Access SafeWay project code](assets/Projects/SafeWay/safeway_codes)  
+![Process Flow](assets/Projects/SafeWay/demoSafeway.mp4) 
