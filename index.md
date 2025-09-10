@@ -25,6 +25,8 @@ Preparatory Classes for Engineering Schools (PCSI/PSI*)
 Scientific Baccalaureate in Physics and Chemistry  
 National GPA: **17.55/20**
 
+---
+
 # Professional Experience  
 
 **Internship – Optimization of Drone Inspections in Energy Facilities**  
@@ -35,9 +37,11 @@ National GPA: **17.55/20**
 - Implemented **intelligent planning algorithms** (**A***, **TSP**) to maximize drone autonomy.  
 - **Tools:** Python, QGIS, Git, CloudCompare, A*, TSP  
 - **Recognition:** Commended by the evaluation committee  
-<img src="/assets/stages/TotalEnergies/results1.png" alt="Results" width="400"/>
-<img src="/assets/stages/TotalEnergies/heuristic.png" alt="Process Flow" width="400"/> 
-<img src="/assets/stages/TotalEnergies/results2.png" alt="Results" width="400"/>
+
+![Results](assets/stages/TotalEnergies/results1.png)  
+![Process Flow](assets/stages/TotalEnergies/heuristic.png)  
+![Results](assets/stages/TotalEnergies/results2.png)
+
 ---
 
 **Internship – Modeling and Machine Learning**  
@@ -48,12 +52,9 @@ National GPA: **17.55/20**
 - Conducted **predictive modeling in Python** for ecological simulations to support **sustainable management**.  
 - **Tools:** Java, Python, PyTorch, Git  
 - **Recognition:** Very good evaluation  
-- 📄 [View presentation (PDF)](/assets/stages/INRAE/Orale_TALEB_loubna_ZZ2_F4-1.pdf) 
-- 💻 [Access INRAE project code]( /assets/codes/Inrae )
+- 📄 [View presentation (PDF)](assets/stages/INRAE/Orale_TALEB_loubna_ZZ2_F4-1.pdf)  
+- 💻 [Access INRAE project code](assets/codes/Inrae)  
 
-
-
-<img src="/assets/stages/INRAE/process1.png" alt="Process Flow" width="400"/>  
-<img src="/assets/stages/INRAE/results.png" alt="Results" width="400"/>
-
-
+![Process Flow](assets/stages/INRAE/process1.png)  
+![Results](assets/stages/INRAE/results.png)
+u
