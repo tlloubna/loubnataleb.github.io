@@ -57,4 +57,3 @@ National GPA: **17.55/20**
 
 ![Process Flow](assets/stages/INRAE/process1.png)  
 ![Results](assets/stages/INRAE/results.png)
-u
