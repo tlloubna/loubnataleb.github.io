@@ -6,7 +6,6 @@ Spécialisée en **IA**, **optimisation** et **vision par ordinateur**
 
 ---
 
-# tesssst
 
 
 

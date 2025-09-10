@@ -1,6 +1,6 @@
-title : Loubna TALEB
-logo : /assets/image/image_loubna.jpg
-description: Architect is a theme for GitHub pages
+title: "Loubna TALEB"
+logo: "/assets/image/image_loubna.jpg"
+description: "Ingénieure Data Science et Robotique - IA, optimisation et vision par ordinateur"
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-architect
