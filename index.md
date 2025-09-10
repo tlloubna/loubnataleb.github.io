@@ -53,7 +53,26 @@ National GPA: **17.55/20**
 - **Tools:** Java, Python, PyTorch, Git  
 - **Recognition:** Very good evaluation  
 - 📄 [View presentation (PDF)](assets/stages/INRAE/Orale_TALEB_loubna_ZZ2_F4-1.pdf)  
-- 💻 [Access INRAE project code](assets/codes/Inrae)  
+- 💻 [Access INRAE project code](assets/stages/INRAE/codes_Inrae)  
 
 ![Process Flow](assets/stages/INRAE/process1.png)  
 ![Results](assets/stages/INRAE/results.png)
+
+
+# Projects
+## SafeWay – Sopra Steria Hackathon, October 2024
+
+Development of a **team web project** to find the **safest routes for pedestrians** based on different user profiles: women, men, disabled people, elderly, etc., using **user feedback** and city data from **Clermont-Ferrand**.  
+
+My role included:  
+- Developing **Dijkstra heuristics** to find the **safest and shortest paths** with an **alpha parameter** to balance safety and distance.  
+- Creating the **graph structure** for shortest-path calculations.  
+- Designing the **first web interface** to collect and store user and city data.  
+
+**Results:**  
+- 1st place for **communication**  
+- 2nd place for **coding part**  
+
+📄 [View presentation (PDF)](/assets/Projects/SafeWay/Bonjour!.pdf)  
+💻 [Access SafeWay project code](assets/Projects/SafeWay/safeway_demo2)  
+![Process Flow](/assets/Projects/SafeWay/vd_safeway (online-video-cutter.com) (1).mp4)

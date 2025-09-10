@@ -1,0 +1,14 @@
+# Labels translations for CepsGHAThinner - french 
+
+CepsGHAThinner.name = Eclaircie G/ha
+CepsGHAThinner.description = Coupe : surface terri\u00e8re cible et nature de l'\u00e9claircie
+CepsGHAThinner.subType = Eclaircie sélective
+
+CepsGHAThinnerDialog = Eclaircie G/ha
+CepsGHAThinnerDialog.sceneGHA = Surface terri\u00e8re de la scène (m2/ha)
+CepsGHAThinnerDialog.targetGHA = Surface terri\u00e8re cible (post intervention) (m2/ha)
+CepsGHAThinnerDialog.type = Nature de l'\u00e9claircie
+CepsGHAThinnerDialog.fromAbove = Par le haut
+CepsGHAThinnerDialog.fromBelow = Par le bas
+CepsGHAThinnerDialog.random = al\u00e9atoire
+CepsGHAThinnerDialog.targetGHAMustBeANumberBetween0And = Surface terri\u00e8re cible (post intervention) doir être un nombre compris entre 0 et

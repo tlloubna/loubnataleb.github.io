@@ -1,0 +1,16 @@
+
+CepsGHAThinner3.name = Thinner with an expected final basal area
+CepsGHAThinner3.description = Cuts trees to reach a final basal area, respecting a type (from below or from above)
+CepsGHAThinner3.subType = Selective thinning
+
+CepsGHAThinnerDialog3.wrongMinCutG = Error on minimum basal area to be cut
+CepsGHAThinnerDialog3.wrongType = Wrong type
+CepsGHAThinnerDialog3.wrongFinalG = Wrong expected basal area after intervention
+#CepsGHAThinnerDialog3.wrongExpectedMixComposition = Error in Expected relative (percentages) abundances of target species after intervention
+CepsGHAThinnerDialog3.sceneG = Basal area of the scene (m2/ha)
+CepsGHAThinnerDialog3.minCutG = Minimum basal area to be cut (or no intervention) (m2/ha)
+CepsGHAThinnerDialog3.type = Type (from below or from above) [0, 1]
+CepsGHAThinnerDialog3.finalG = Expected basal area after intervention (m2/ha or in percentage of the initial basal area, e.g. 32%)
+#CepsGHAThinnerDialog3.expectedMixComposition = Expected relative (percentages) abundances of target species after intervention (e.g. AAlb-30, FSyl-65)
+
+
