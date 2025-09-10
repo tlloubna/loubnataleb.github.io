@@ -35,7 +35,9 @@ National GPA: **17.55/20**
 - Implemented **intelligent planning algorithms** (**A***, **TSP**) to maximize drone autonomy.  
 - **Tools:** Python, QGIS, Git, CloudCompare, A*, TSP  
 - **Recognition:** Commended by the evaluation committee  
-
+<img src="/assets/stages/TotalEnergies/results1.png" alt="Results" width="400"/>
+<img src="/assets/stages/TotalEnergies/heuristic.png" alt="Process Flow" width="400"/> 
+<img src="/assets/stages/TotalEnergies/results2.png" alt="Results" width="400"/>
 ---
 
 **Internship – Modeling and Machine Learning**  
@@ -49,7 +51,7 @@ National GPA: **17.55/20**
 - 📄 [View presentation (PDF)](/assets/stages/INRAE/Orale_TALEB_loubna_ZZ2_F4-1.pdf) 
 - 💻 [Access INRAE project code]( /assets/codes/Inrae )
 
-**Project visuals:**  
+
 
 <img src="/assets/stages/INRAE/process1.png" alt="Process Flow" width="400"/>  
 <img src="/assets/stages/INRAE/results.png" alt="Results" width="400"/>
