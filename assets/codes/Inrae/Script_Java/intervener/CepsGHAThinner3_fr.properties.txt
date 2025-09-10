@@ -1,0 +1,16 @@
+
+CepsGHAThinner3.name = Eclaircie avec une surface terrière
+CepsGHAThinner3.description = Coupe des arbres pour atteindre une surface terrière après intervention, selon un type (par le haut, par le bas)
+CepsGHAThinner3.subType = Eclaircie sélective
+
+CepsGHAThinnerDialog3.wrongMinCutG = Erreur sur surface terrière de la scène minimum à couper
+CepsGHAThinnerDialog3.wrongType = Mauvais type
+CepsGHAThinnerDialog3.wrongFinalG = Erreur sur surface terrière attendue après intervention
+#CepsGHAThinnerDialog3.wrongExpectedMixComposition = Error in Expected relative (percentages) abundances of target species after intervention
+CepsGHAThinnerDialog3.sceneG = Surface terrière de la scène (m2/ha)
+CepsGHAThinnerDialog3.minCutG = Surface terrière de la scène minimum à couper (sinon pas d'intervention) (m2/ha)
+CepsGHAThinnerDialog3.type = Type (par le haut, par le bas) [0, 1]
+CepsGHAThinnerDialog3.finalG = Surface terrière attendue après intervention (m2/ha ou en pourcentage de la surface terrière initiale, e.g. 32%)
+#CepsGHAThinnerDialog3.expectedMixComposition = Expected relative (percentages) abundances of target species after intervention (e.g. AAlb-30, FSyl-65)
+
+

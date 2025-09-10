@@ -1,0 +1,14 @@
+# Labels translations for CepsGHAThinner - english 
+
+CepsGHAThinner.name = Thinning on G/ha
+CepsGHAThinner.description = Thinning: target basal area & thinning type
+CepsGHAThinner.subType = Selective thinning
+
+CepsGHAThinnerDialog = Thinning on G/ha
+CepsGHAThinnerDialog.sceneGHA = Scene basal area (m2/ha)
+CepsGHAThinnerDialog.targetGHA = Target (post intervention) basal area (m2/ha)
+CepsGHAThinnerDialog.type = Thinning type
+CepsGHAThinnerDialog.fromAbove = from above
+CepsGHAThinnerDialog.fromBelow = from below
+CepsGHAThinnerDialog.random = random
+CepsGHAThinnerDialog.targetGHAMustBeANumberBetween0And = Target (post intervention) basal area must be a number between 0 and
