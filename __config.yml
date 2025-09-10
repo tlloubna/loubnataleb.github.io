@@ -1,4 +1,5 @@
 title : Loubna TALEB
-#logo: /assets/img/loubna_taleb.png
-show_download: true
-theme: minima
+description: Architect is a theme for GitHub Pages.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-architect
