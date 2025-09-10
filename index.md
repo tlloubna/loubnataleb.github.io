@@ -6,10 +6,8 @@
 
 ---
 
-## 🚀 À propos de moi
+# tesssst
 
-Passionnée par l’**intelligence artificielle**, la **robotique** et l’**optimisation**, j’aime concevoir des solutions innovantes qui allient performance et impact concret.  
-Mon parcours m’a permis de travailler sur des projets allant de la **planification de missions drones** à la **modélisation écologique** en passant par le **deep learning** pour la vision 3D.
 
 
 
