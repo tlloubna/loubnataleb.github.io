@@ -73,6 +73,10 @@ My role included:
 - 1st place for **communication**  
 - 2nd place for **coding part**  
 
-📄 [View presentation (PDF)](/assets/Projects/SafeWay/presentationSafeWay.pdf)  
+📄 [View presentation (PDF)](/assets/Projects/SafeWay/app.py)  
 💻 [Access SafeWay project code](assets/Projects/SafeWay/safeway_codes)  
-![Process Flow](assets/Projects/SafeWay/demoSafeway.mp4) 
+<video width="400" controls>
+  <source src="assets/Projects/SafeWay/demoSafeway.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
