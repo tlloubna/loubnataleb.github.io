@@ -51,3 +51,8 @@ for point, neighbors in connections.items():
 # Save the graph to a JSON file
 with open('graph_with_coordinates.json', 'w') as f:
     json.dump(graph, f, indent=4)
+
+# Add the function to load the graph
+def load_graph(file_path):
+    with open(file_path, 'r') as f:
+        return json.load(f)

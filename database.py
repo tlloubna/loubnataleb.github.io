@@ -73,3 +73,22 @@ def get_danger_zones(conn):
     cursor.execute("SELECT lat, lon, avg_rating FROM danger_zones WHERE avg_rating <= 3")
     rows = cursor.fetchall()
     return [{'lat': row[0], 'lon': row[1], 'avg_rating': row[2]} for row in rows]
+
+def add_user(conn, first_name, last_name, gender, disability_status, address, age, email, password):
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            first_name TEXT,
+            last_name TEXT,
+            gender TEXT,
+            disability_status TEXT,
+            address TEXT,
+            age INTEGER,
+            email TEXT,
+            password TEXT
+        )
+    """)
+    cursor.execute("INSERT INTO users (first_name, last_name, gender, disability_status, address, age, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 
+                   (first_name, last_name, gender, disability_status, address, age, email, password))
+    conn.commit()
