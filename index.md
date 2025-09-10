@@ -46,4 +46,8 @@ National GPA: **17.55/20**
 - Conducted **predictive modeling in Python** for ecological simulations to support **sustainable management**.  
 - **Tools:** Java, Python, PyTorch, Git  
 - **Recognition:** Very good evaluation  
-- 📄 [View presentation (PDF)](/assets/stages/INRAE/Orale_TALEB_loubna_ZZ2_F4-1.pdf)
+- 📄 [View presentation (PDF)](/assets/stages/INRAE/Orale_TALEB_loubna_ZZ2_F4-1.pdf)  
+
+![Process Flow](/assets/stages/INRAE/process1.png)  
+![Results](/assets/stages/INRAE/results.png)
+
