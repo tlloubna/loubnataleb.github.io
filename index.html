@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loubna Taleb - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+  <div class="max-w-3xl mx-auto p-6">
+    <!-- Header -->
+    <h1 class="text-4xl font-bold text-center mb-4">I am Loubna Taleb</h1>
+    <p class="text-center text-lg text-gray-600 mb-8">
+      Data Science and Robotics Engineer – Specialized in  <b>optimization</b>, and <b>computer vision</b>
+    </p>
+
+    <!-- Accordion Component -->
+    <div class="space-y-4">
+
+      <!-- Education Section -->
+      <div class="border rounded-2xl shadow">
+        <button class="w-full flex justify-between items-center px-4 py-3 text-xl font-semibold hover:bg-gray-100"
+                onclick="toggleSection('education')">
+          🎓 Education
+          <span id="education-icon">➕</span>
+        </button>
+        <div id="education" class="hidden px-6 pb-4 space-y-4">
+          <p><b>ISIMA – Clermont-Ferrand (2022–2025)</b><br>
+          Engineering School in Computer Science – Specialization in Optimization and AI<br>
+          GPA: 15/20 (Very Good)</p>
+        
+          <p><b>EUPI – Clermont-Ferrand (2024–2025)</b><br>
+          Master’s Degree in Robotics and Artificial Perception (Double degree)<br>
+          GPA: 15/20 (Very Good)</p>
+        
+          <p><b>CPGE – Morocco, Meknes & Marrakech (2020–2022)</b><br>
+          Preparatory Classes for Engineering Schools (PCSI/PSI*)<br>
+          - <b>PCSI</b>: Ranked among the top students, admitted to PSI* at Ibn Timiya in Marrakech<br>
+          - <b>PSI*</b>: Admitted to ISIMA through the CCINP national entrance exam<br>
+          - Also admitted to EMI (Military School of Engineering, Morocco) with a national ranking of <b>17/910</b>
+          </p>
+        
+          <p><b>Baccalaureate – Morocco, ZAIO (2020)</b><br>
+          Scientific Baccalaureate in Physics and Chemistry<br>
+          National GPA: <b>17.55/20</b></p>
+        </div>
+        
+      </div>
+
+      <!-- Experience Section -->
+      <!-- Professional Experience -->
+      <div class="border rounded-2xl shadow">
+        <button class="w-full flex justify-between items-center px-4 py-3 text-xl font-semibold hover:bg-gray-100"
+                onclick="toggleSection('experience')">
+          💼 Professional Experience
+          <span id="experience-icon">➕</span>
+        </button>
+        <div id="experience" class="hidden px-6 pb-4 space-y-6">
+
+          <!-- TotalEnergies Internship -->
+          <div>
+            <p><b>Internship – Optimization of Drone Inspections in Energy Facilities</b><br>
+            <i>TotalEnergies – April 2025 to September 2025, Pau, France</i></p>
+            <ul class="list-disc list-inside mt-2">
+              <li>Developed <b>automatic mission planning algorithms</b> for drone inspection of georeferenced energy facilities.</li>
+              <li>Designed <b>internal software interfaces</b> to facilitate mission preparation and export of <b>KMZ files</b> compatible with <b>DJI drones</b>.</li>
+              <li>Implemented <b>intelligent planning algorithms</b> (A*, TSP) to maximize drone autonomy.</li>
+              <li><b>Tools:</b> Python, QGIS, Git, CloudCompare, A*, TSP</li>
+              <li><b>Recognition:</b> Commended by the evaluation committee</li>
+            </ul>
+            <div class="mt-2 space-y-2">
+              <img src="assets/stages/TotalEnergies/results1.png" class="rounded-lg">
+              <img src="assets/stages/TotalEnergies/heuristic.png" class="rounded-lg">
+              <img src="assets/stages/TotalEnergies/results2.png" class="rounded-lg">
+            </div>
+          </div>
+
+          <!-- INRAE Internship -->
+          <div>
+            <p><b>Internship – Modeling and Machine Learning</b><br>
+            <i>INRAE – March 2024 to August 2024, Clermont-Ferrand, France</i></p>
+            <ul class="list-disc list-inside mt-2">
+              <li>Developed a decision-support tool for <b>forest management under climate change</b>.</li>
+              <li>Applied <b>genetic algorithms in Java</b> for silvicultural optimization.</li>
+              <li>Conducted <b>predictive modeling in Python</b> for ecological simulations to support <b>sustainable management</b>.</li>
+              <li><b>Tools:</b> Java, Python, PyTorch, Git</li>
+              <li><b>Recognition:</b> Very good evaluation</li>
+              <li>📄 <a href="assets/stages/INRAE/Orale_TALEB_loubna_ZZ2_F4-1.pdf" class="text-blue-600 underline">View presentation (PDF)</a></li>
+              <li>💻 <a href="assets/stages/INRAE/codes_Inrae" class="text-blue-600 underline">Access INRAE project code</a></li>
+            </ul>
+            <div class="mt-2 space-y-2">
+              <img src="assets/stages/INRAE/process1.png" class="rounded-lg">
+              <img src="assets/stages/INRAE/results.png" class="rounded-lg">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    <!-- Projects -->
+<div class="border rounded-2xl shadow">
+  <button class="w-full flex justify-between items-center px-4 py-3 text-xl font-semibold hover:bg-gray-100"
+          onclick="toggleSection('projects')">
+    🚀 Projects
+    <span id="projects-icon">➕</span>
+  </button>
+  <div id="projects" class="hidden px-6 pb-4 space-y-6">
+
+    <!-- SafeWay Project -->
+    <div>
+      <h3 class="font-bold text-lg">SafeWay – Sopra Steria Hackathon, October 2024</h3>
+      <p>Development of a <b>team web project</b> to find the <b>safest routes for pedestrians</b> based on different user profiles: women, men, disabled people, elderly, etc., using <b>user feedback</b> and city data from <b>Clermont-Ferrand</b>.</p>
+      <p>My role included:</p>
+      <ul class="list-disc list-inside mt-2">
+        <li>Developing <b>Dijkstra heuristics</b> to find the <b>safest and shortest paths</b> with an <b>alpha parameter</b> to balance safety and distance.</li>
+        <li>Creating the <b>graph structure</b> for shortest-path calculations.</li>
+        <li>Designing the <b>first web interface</b> to collect and store user and city data.</li>
+      </ul>
+      <p><b>Results:</b></p>
+      <ul class="list-disc list-inside">
+        <li>1st place for <b>communication</b></li>
+        <li>2nd place for <b>coding part</b></li>
+      </ul>
+      <p>📄 <a href="/assets/Projects/SafeWay/presentationSafeWay.pdf" class="text-blue-600 underline">View presentation (PDF)</a><br>
+         💻 <a href="assets/Projects/SafeWay/app.py" class="text-blue-600 underline">Access SafeWay project code</a></p>
+      <video class="mt-2 rounded-lg" width="400" controls>
+        <source src="assets/Projects/SafeWay/demoSafeway.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Mushroom Classification Project -->
+    <div>
+      <h3 class="font-bold text-lg">Mushroom Image Classification Project</h3>
+      <p>The goal of this project was to classify a mushroom dataset into three classes: <code>amanita</code>, <code>oyster</code>, and <code>crimini</code>. We started by visually analyzing the images to understand their characteristics and determine the most suitable neural network for the task. We also reviewed scientific papers on image classification with various dimensions.</p>
+      <p>Based on this research, we tested two pretrained neural network models and adapted them to our dataset. The first model, <b>Inception-V3</b>, achieved excellent results with 95% accuracy on the test set and 99% on the training set. The second model, <b>VGG-16</b>, produced disappointing results and was abandoned.</p>
+      <p>A major challenge was the limitation of Google Colab’s GPU training time (2 hours). To overcome this, we created multiple Colab environments. CPU training was very slow, with one epoch taking over 10 minutes. Despite these constraints, we successfully optimized and validated the Inception model, which showed promising performance for our classification task.</p>
+      <div class="mt-2 space-y-2">
+        <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/rendu_26/Challenge_DL_Loubna_Halima.ipynb" class="rounded-lg">
+        <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/INCEPTION.png" class="rounded-lg">
+        <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/VGG.png" class="rounded-lg">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      const icon = document.getElementById(id + "-icon");
+      section.classList.toggle("hidden");
+      icon.textContent = section.classList.contains("hidden") ? "➕" : "➖";
+    }
+  </script>
+
+</body>
+</html>
