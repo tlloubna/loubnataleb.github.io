@@ -9,10 +9,11 @@
 <body class="bg-gray-50 text-gray-900 font-sans">
 
   <div class="max-w-3xl mx-auto p-6">
+
     <!-- Header -->
     <h1 class="text-4xl font-bold text-center mb-4">I am Loubna Taleb</h1>
     <p class="text-center text-lg text-gray-600 mb-8">
-      Data Science and Robotics Engineer – Specialized in  <b>optimization</b>, and <b>computer vision</b>
+      Data Science and Robotics Engineer – Specialized in <b>optimization</b>, and <b>computer vision</b>
     </p>
 
     <!-- Accordion Component -->
@@ -38,18 +39,15 @@
           Preparatory Classes for Engineering Schools (PCSI/PSI*)<br>
           - <b>PCSI</b>: Ranked among the top students, admitted to PSI* at Ibn Timiya in Marrakech<br>
           - <b>PSI*</b>: Admitted to ISIMA through the CCINP national entrance exam<br>
-          - Also admitted to EMI (Military School of Engineering, Morocco) with a national ranking of <b>17/910</b>
-          </p>
+          - Also admitted to EMI (Military School of Engineering, Morocco) with a national ranking of <b>17/910</b></p>
         
           <p><b>Baccalaureate – Morocco, ZAIO (2020)</b><br>
           Scientific Baccalaureate in Physics and Chemistry<br>
           National GPA: <b>17.55/20</b></p>
         </div>
-        
       </div>
 
-      <!-- Experience Section -->
-      <!-- Professional Experience -->
+      <!-- Professional Experience Section -->
       <div class="border rounded-2xl shadow">
         <button class="w-full flex justify-between items-center px-4 py-3 text-xl font-semibold hover:bg-gray-100"
                 onclick="toggleSection('experience')">
@@ -87,7 +85,7 @@
               <li><b>Tools:</b> Java, Python, PyTorch, Git</li>
               <li><b>Recognition:</b> Very good evaluation</li>
               <li>📄 <a href="assets/stages/INRAE/Orale_TALEB_loubna_ZZ2_F4-1.pdf" class="text-blue-600 underline">View presentation (PDF)</a></li>
-              <li>💻 <a href="https://github.com/tlloubna/loubnataleb.github.io/tree/main/assets/stages/INRAE/codes_Inrae" target="_blank" class="text-blue-600 underline">Access INRAE project code on GitHub</a><li>
+              <li>💻 <a href="https://github.com/tlloubna/loubnataleb.github.io/tree/main/assets/stages/INRAE/codes_Inrae" target="_blank" class="text-blue-600 underline">Access INRAE project code on GitHub</a></li>
             </ul>
             <div class="mt-2 space-y-2">
               <img src="assets/stages/INRAE/process1.png" class="rounded-lg">
@@ -98,54 +96,57 @@
         </div>
       </div>
 
+      <!-- Projects Section -->
+      <div class="border rounded-2xl shadow">
+        <button class="w-full flex justify-between items-center px-4 py-3 text-xl font-semibold hover:bg-gray-100"
+                onclick="toggleSection('projects')">
+          🚀 Projects
+          <span id="projects-icon">➕</span>
+        </button>
+        <div id="projects" class="hidden px-6 pb-4 space-y-6">
 
-    <!-- Projects -->
-<div class="border rounded-2xl shadow">
-  <button class="w-full flex justify-between items-center px-4 py-3 text-xl font-semibold hover:bg-gray-100"
-          onclick="toggleSection('projects')">
-    🚀 Projects
-    <span id="projects-icon">➕</span>
-  </button>
-  <div id="projects" class="hidden px-6 pb-4 space-y-6">
+          <!-- SafeWay Project -->
+          <div>
+            <h3 class="font-bold text-lg">SafeWay – Sopra Steria Hackathon, October 2024</h3>
+            <p>Development of a <b>team web project</b> to find the <b>safest routes for pedestrians</b> based on different user profiles: women, men, disabled people, elderly, etc., using <b>user feedback</b> and city data from <b>Clermont-Ferrand</b>.</p>
+            <p>My role included:</p>
+            <ul class="list-disc list-inside mt-2">
+              <li>Developing <b>Dijkstra heuristics</b> to find the <b>safest and shortest paths</b> with an <b>alpha parameter</b> to balance safety and distance.</li>
+              <li>Creating the <b>graph structure</b> for shortest-path calculations.</li>
+              <li>Designing the <b>first web interface</b> to collect and store user and city data.</li>
+            </ul>
+            <p><b>Results:</b></p>
+            <ul class="list-disc list-inside">
+              <li>1st place for <b>communication</b></li>
+              <li>2nd place for <b>coding part</b></li>
+            </ul>
+            <p>📄 <a href="/assets/Projects/SafeWay/presentationSafeWay.pdf" class="text-blue-600 underline">View presentation (PDF)</a><br>
+            💻 <a href="https://github.com/tlloubna/loubnataleb.github.io/tree/main/assets/Projects/SafeWay/CodesSafeway" target="_blank" class="text-blue-600 underline">SafeWay Codes on GitHub</a></p>
 
-    <!-- SafeWay Project -->
-    <div>
-      <h3 class="font-bold text-lg">SafeWay – Sopra Steria Hackathon, October 2024</h3>
-      <p>Development of a <b>team web project</b> to find the <b>safest routes for pedestrians</b> based on different user profiles: women, men, disabled people, elderly, etc., using <b>user feedback</b> and city data from <b>Clermont-Ferrand</b>.</p>
-      <p>My role included:</p>
-      <ul class="list-disc list-inside mt-2">
-        <li>Developing <b>Dijkstra heuristics</b> to find the <b>safest and shortest paths</b> with an <b>alpha parameter</b> to balance safety and distance.</li>
-        <li>Creating the <b>graph structure</b> for shortest-path calculations.</li>
-        <li>Designing the <b>first web interface</b> to collect and store user and city data.</li>
-      </ul>
-      <p><b>Results:</b></p>
-      <ul class="list-disc list-inside">
-        <li>1st place for <b>communication</b></li>
-        <li>2nd place for <b>coding part</b></li>
-      </ul>
-      <p>📄 <a href="/assets/Projects/SafeWay/presentationSafeWay.pdf" class="text-blue-600 underline">View presentation (PDF)</a><br>
-         💻 <a href="assets/Projects/SafeWay/app.py" class="text-blue-600 underline">Access SafeWay project code</a></p>
-      <video class="mt-2 rounded-lg" width="400" controls>
-        <source src="assets/Projects/SafeWay/demoSafeway.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+            <video class="mt-2 rounded-lg" width="800" controls>
+              <source src="assets/Projects/SafeWay/demoSafeway.mp4" type="video/mp4">
+            </video>
+          </div>
 
-    <!-- Mushroom Classification Project -->
-    <div>
-      <h3 class="font-bold text-lg">Mushroom Image Classification Project</h3>
-      <p>The goal of this project was to classify a mushroom dataset into three classes: <code>amanita</code>, <code>oyster</code>, and <code>crimini</code>. We started by visually analyzing the images to understand their characteristics and determine the most suitable neural network for the task. We also reviewed scientific papers on image classification with various dimensions.</p>
-      <p>Based on this research, we tested two pretrained neural network models and adapted them to our dataset. The first model, <b>Inception-V3</b>, achieved excellent results with 95% accuracy on the test set and 99% on the training set. The second model, <b>VGG-16</b>, produced disappointing results and was abandoned.</p>
-      <p>A major challenge was the limitation of Google Colab’s GPU training time (2 hours). To overcome this, we created multiple Colab environments. CPU training was very slow, with one epoch taking over 10 minutes. Despite these constraints, we successfully optimized and validated the Inception model, which showed promising performance for our classification task.</p>
-      <div class="mt-2 space-y-2">
-        <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/rendu_26/Challenge_DL_Loubna_Halima.ipynb" class="rounded-lg">
-        <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/INCEPTION.png" class="rounded-lg">
-        <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/VGG.png" class="rounded-lg">
+          <!-- Mushroom Classification Project -->
+          <div>
+            <h3 class="font-bold text-lg">Mushroom Image Classification Project</h3>
+            <p>The goal of this project was to classify a mushroom dataset into three classes: <code>amanita</code>, <code>oyster</code>, and <code>crimini</code>. We started by visually analyzing the images to understand their characteristics and determine the most suitable neural network for the task. We also reviewed scientific papers on image classification with various dimensions.</p>
+            <p>Based on this research, we tested two pretrained neural network models and adapted them to our dataset. The first model, <b>Inception-V3</b>, achieved excellent results with 95% accuracy on the test set and 99% on the training set. The second model, <b>VGG-16</b>, produced disappointing results and was abandoned.</p>
+            <p>A major challenge was the limitation of Google Colab’s GPU training time (2 hours). To overcome this, we created multiple Colab environments. CPU training was very slow, with one epoch taking over 10 minutes. Despite these constraints, we successfully optimized and validated the Inception model, which showed promising performance for our classification task.</p>
+            <div class="mt-2 space-y-2">
+              <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/rendu_26/Challenge_DL_Loubna_Halima.ipynb" class="rounded-lg">
+              <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/INCEPTION.png" class="rounded-lg">
+              <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/VGG.png" class="rounded-lg">
+            </div>
+          </div>
+
+        </div>
       </div>
+
     </div>
 
   </div>
-</div>
 
   <script>
     function toggleSection(id) {
