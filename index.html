@@ -360,7 +360,7 @@ footer .mono{color:var(--ink)}
     </div>
     <div class="portrait">
       <div class="ring"></div>
-      <img src="assets/profile.jpg" alt="Loubna Taleb" onerror="this.outerHTML='<div class=ph>LT</div>'">
+      <img src="https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/profile.jpg" alt="Loubna Taleb" onerror="this.outerHTML='<div class=ph>LT</div>'">
     </div>
   </div>
 </header>
@@ -641,17 +641,17 @@ document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',(
 //  fr / en = légende (lieu) dans chaque langue ; ctx = petit contexte
 // ============================================================
 const PHOTOS=[
-  {file:'porto-sunset.jpeg',  cat:'voyage', fr:'Porto, Portugal',      en:'Porto, Portugal',      ctx_fr:'Coucher de soleil sur le Douro', ctx_en:'Sunset over the Douro'},
-  {file:'porto-bridge.jpeg',  cat:'voyage', fr:'Pont Dom Luís — Porto', en:'Dom Luís Bridge — Porto', ctx_fr:'Le long du Douro',            ctx_en:'Along the Douro'},
-  {file:'porto-azulejos.jpeg',cat:'voyage', fr:'Azulejos — Portugal',   en:'Azulejos — Portugal',  ctx_fr:'Céramiques traditionnelles',     ctx_en:'Traditional ceramics'},
-  {file:'salon_napoleon_3.jpeg',  cat:'voyage', fr:'Salon Napoléon III',    en:'Napoleon III Apartments', ctx_fr:'Musée du Louvre, Paris',      ctx_en:'Louvre Museum, Paris'},
-  {file:'napoleo_3_salle_mange.jpeg', cat:'voyage', fr:'Grande salle à manger', en:'Grand dining room',    ctx_fr:'Appartements Napoléon III, Louvre', ctx_en:'Napoleon III Apartments, Louvre'},
-  {file:'cergy-sunset.jpeg',  cat:'cergy',  fr:'Cergy au crépuscule',   en:'Cergy at dusk',        ctx_fr:"Ciel d'orage",                   ctx_en:'Stormy sky'},
-  {file:'cergy-port.jpeg',    cat:'cergy',  fr:'Port de Cergy',         en:'Cergy harbour',        ctx_fr:"Bords de l'Oise",                ctx_en:'Banks of the Oise'},
-  {file:'cergy-port2.jpeg',   cat:'cergy',  fr:"Plan d'eau de Cergy",   en:'Cergy lake',           ctx_fr:'Île de loisirs',                 ctx_en:'Leisure island'},
-  {file:'rando_lac_d_estaing.png', cat:'rando', fr:'Randonnée — Pyrénées', en:'Hike — Pyrenees',    ctx_fr:"Lac d'Estaing",                  ctx_en:"Lac d'Estaing"}
+  {file:"https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/porto-sunset.jpeg",  cat:'voyage', fr:'Porto, Portugal',      en:'Porto, Portugal',      ctx_fr:'Coucher de soleil sur le Douro', ctx_en:'Sunset over the Douro'},
+  {file:"https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/porto-bridge.jpeg",  cat:'voyage', fr:'Pont Dom Luís — Porto', en:'Dom Luís Bridge — Porto', ctx_fr:'Le long du Douro',            ctx_en:'Along the Douro'},
+  {file:"https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/porto-azulejos.jpeg",cat:'voyage', fr:'Azulejos — Portugal',   en:'Azulejos — Portugal',  ctx_fr:'Céramiques traditionnelles',     ctx_en:'Traditional ceramics'},
+  {file:"https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/salon_napoleon_3.jpeg",  cat:'voyage', fr:'Salon Napoléon III',    en:'Napoleon III Apartments', ctx_fr:'Musée du Louvre, Paris',      ctx_en:'Louvre Museum, Paris'},
+  {file:"https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/napoleo_3_salle_mange.jpeg", cat:'voyage', fr:'Grande salle à manger', en:'Grand dining room',    ctx_fr:'Appartements Napoléon III, Louvre', ctx_en:'Napoleon III Apartments, Louvre'},
+  {file:"https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/cergy-sunset.jpeg",  cat:'cergy',  fr:'Cergy au crépuscule',   en:'Cergy at dusk',        ctx_fr:"Ciel d'orage",                   ctx_en:'Stormy sky'},
+  {file:"https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/cergy-port.jpeg",    cat:'cergy',  fr:'Port de Cergy',         en:'Cergy harbour',        ctx_fr:"Bords de l'Oise",                ctx_en:'Banks of the Oise'},
+  {file:"https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/cergy-port2.jpeg",   cat:'cergy',  fr:"Plan d'eau de Cergy",   en:'Cergy lake',           ctx_fr:'Île de loisirs',                 ctx_en:'Leisure island'},
+  {file:"https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/rando_lac_d_estaing.png", cat:'rando', fr:'Randonnée — Pyrénées', en:'Hike — Pyrenees',    ctx_fr:"Lac d'Estaing",                  ctx_en:"Lac d'Estaing"}
 ];
-const PHOTO_PATH="https://github.com/tlloubna/loubnataleb.github.io/blob/main/assets/image/";
+
 const CATS={
   all:  {fr:'Tout',       en:'All'},
   voyage:{fr:'Voyages',   en:'Travels'},
@@ -688,7 +688,7 @@ function renderGallery(){
   const list=PHOTOS.filter(p=>activeCat==='all'||p.cat===activeCat);
   let shown=0;
   list.forEach(p=>{
-    const src=PHOTO_PATH+p.file;
+    const src=p.file;
     const fig=document.createElement('figure');
     const img=new Image();
     img.alt=p[curLang()]; img.loading='lazy';
