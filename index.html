@@ -1,161 +1,512 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loubna Taleb - Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loubna Taleb — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f2742;
+  --ink-soft:#3c5573;
+  --blue:#2f72c4;
+  --blue-deep:#1d4e8f;
+  --accent:#e0962f;
+  --sky:#eaf2fb;
+  --sky-2:#f4f8fd;
+  --paper:#ffffff;
+  --line:#d8e3f0;
+  --shadow:0 1px 2px rgba(15,39,66,.04),0 8px 28px rgba(15,39,66,.07);
+  --shadow-lg:0 18px 50px rgba(15,39,66,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:'JetBrains Mono',monospace}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.15;color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:'Sora';font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+.brand span{color:var(--blue)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--ink-soft);transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.lang-toggle{
+  display:inline-flex;border:1px solid var(--line);border-radius:999px;
+  overflow:hidden;background:var(--sky-2);
+}
+.lang-toggle button{
+  border:0;background:transparent;cursor:pointer;
+  font-family:'JetBrains Mono';font-size:.78rem;font-weight:500;
+  padding:6px 13px;color:var(--ink-soft);transition:.2s;
+}
+.lang-toggle button.active{background:var(--blue);color:#fff}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;font-size:1.5rem;color:var(--ink)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;overflow:hidden;padding:80px 0 70px}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(900px 380px at 78% -8%,rgba(47,114,196,.16),transparent 60%),
+    radial-gradient(700px 320px at 10% 110%,rgba(224,150,47,.10),transparent 60%),
+    linear-gradient(180deg,var(--sky-2),#fff);
+}
+.hero-grid{display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono';font-size:.78rem;font-weight:500;
+  color:var(--blue-deep);background:#fff;border:1px solid var(--line);
+  padding:6px 14px;border-radius:999px;box-shadow:var(--shadow);margin-bottom:22px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(224,150,47,.2)}
+.hero h1{font-size:clamp(2.3rem,5vw,3.4rem);font-weight:800;letter-spacing:-.025em}
+.hero h1 .grad{
+  background:linear-gradient(120deg,var(--blue),var(--blue-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .role{font-family:'Sora';font-weight:600;font-size:1.15rem;color:var(--blue);margin-top:6px}
+.hero p.lede{font-size:1.05rem;color:var(--ink-soft);max-width:540px;margin-top:18px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:'Sora';font-weight:600;font-size:.92rem;
+  padding:12px 22px;border-radius:12px;transition:.2s;cursor:pointer;border:1px solid transparent;
+}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 22px rgba(47,114,196,.32)}
+.btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:var(--shadow)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+.portrait{
+  position:relative;width:250px;height:250px;margin:0 auto;
+}
+.portrait .ring{
+  position:absolute;inset:-14px;border-radius:50%;
+  background:conic-gradient(from 130deg,var(--blue),var(--accent),var(--blue-deep),var(--blue));
+  filter:blur(2px);opacity:.55;animation:spin 14s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.portrait img,.portrait .ph{
+  position:relative;width:250px;height:250px;border-radius:50%;
+  object-fit:cover;border:5px solid #fff;box-shadow:var(--shadow-lg);
+}
+.portrait .ph{
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--sky),#fff);
+  font-family:'Sora';font-weight:700;font-size:3.6rem;color:var(--blue);
+}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tag{
+  font-family:'JetBrains Mono';font-size:.76rem;color:var(--blue-deep);
+  background:#fff;border:1px solid var(--line);padding:5px 12px;border-radius:8px;
+}
+
+/* ---------- SECTIONS ---------- */
+section{padding:74px 0;scroll-margin-top:72px}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
+.sec-num{font-family:'JetBrains Mono';font-size:.85rem;color:var(--accent);font-weight:500}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;letter-spacing:-.02em}
+.sec-line{flex:1;height:1px;background:var(--line);align-self:center}
+.bg-soft{background:var(--sky-2)}
+
+/* ---------- ABOUT QUICK FACTS ---------- */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.fact{
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:22px;box-shadow:var(--shadow);transition:.25s;
+}
+.fact:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#c7d8ec}
+.fact .k{font-family:'JetBrains Mono';font-size:.74rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em}
+.fact .v{font-family:'Sora';font-weight:700;font-size:1.05rem;margin-top:6px;color:var(--ink)}
+.fact .v small{display:block;font-family:'Inter';font-weight:400;font-size:.82rem;color:var(--ink-soft);margin-top:2px}
+
+/* ---------- TIMELINE (experience) ---------- */
+.tl{position:relative;padding-left:30px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:34px}
+.tl-item:last-child{margin-bottom:0}
+.tl-item::before{
+  content:"";position:absolute;left:-30px;top:6px;width:16px;height:16px;border-radius:50%;
+  background:#fff;border:3px solid var(--blue);box-shadow:0 0 0 4px var(--sky-2);
+}
+.tl-item.gold::before{border-color:var(--accent)}
+.tl-card{
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:24px 26px;box-shadow:var(--shadow);transition:.25s;
+}
+.tl-card:hover{box-shadow:var(--shadow-lg);transform:translateX(3px)}
+.tl-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px}
+.tl-meta .when{font-family:'JetBrains Mono';font-size:.78rem;color:var(--accent);font-weight:500}
+.tl-meta .org{font-size:.85rem;color:var(--blue);font-weight:600}
+.tl-meta .loc{font-size:.82rem;color:var(--ink-soft)}
+.tl-card h3{font-size:1.12rem;font-weight:600;margin-bottom:10px}
+.tl-card ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.tl-card li{position:relative;padding-left:18px;font-size:.94rem;color:var(--ink-soft)}
+.tl-card li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.tl-card li b{color:var(--ink);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chip{font-family:'JetBrains Mono';font-size:.72rem;background:var(--sky);color:var(--blue-deep);padding:4px 10px;border-radius:7px}
+.reco{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:.84rem;font-weight:600;color:var(--accent)}
+.tl-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px}
+.tl-links a{font-size:.85rem;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.tl-links a:hover{color:var(--blue-deep);gap:9px}
+
+/* ---------- PROJECTS ---------- */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.proj{
+  background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  box-shadow:var(--shadow);transition:.28s;display:flex;flex-direction:column;
+}
+.proj:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:#c7d8ec}
+.proj-top{padding:24px 26px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.proj-tag{font-family:'JetBrains Mono';font-size:.72rem;color:var(--accent);font-weight:500}
+.proj h3{font-size:1.18rem;font-weight:700;margin:8px 0 0;padding:0 26px}
+.proj p{padding:12px 26px 0;font-size:.93rem;color:var(--ink-soft);flex:1}
+.proj .badges{display:flex;flex-wrap:wrap;gap:8px;padding:16px 26px 0}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono';font-size:.72rem;
+  background:var(--sky);color:var(--blue-deep);padding:5px 11px;border-radius:8px;font-weight:500;
+}
+.badge.win{background:#fdf3e3;color:#b06f12}
+.proj-links{display:flex;gap:16px;padding:18px 26px 24px;margin-top:auto}
+.proj-links a{font-size:.85rem;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.proj-links a:hover{color:var(--blue-deep);gap:9px}
+
+/* ---------- SKILLS ---------- */
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+.skill-card h4{font-size:.82rem;font-family:'JetBrains Mono';font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:14px}
+.skill-card .items{display:flex;flex-wrap:wrap;gap:8px}
+.skill-card .items span{font-size:.86rem;background:var(--sky);color:var(--blue-deep);padding:6px 12px;border-radius:9px;font-weight:500}
+.langs{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.lang-row{display:flex;justify-content:space-between;align-items:center;font-size:.9rem}
+.lang-row .lvl{font-family:'JetBrains Mono';font-size:.76rem;color:var(--ink-soft)}
+
+/* ---------- CONTACT ---------- */
+.contact{text-align:center}
+.contact-card{
+  background:linear-gradient(135deg,var(--blue-deep),var(--blue));
+  border-radius:26px;padding:56px 40px;color:#fff;position:relative;overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.contact-card::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.08);top:-140px;right:-90px}
+.contact-card::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(224,150,47,.18);bottom:-120px;left:-70px}
+.contact-card h2{color:#fff;font-size:clamp(1.7rem,3.5vw,2.3rem);position:relative}
+.contact-card p{color:rgba(255,255,255,.85);margin:14px auto 0;max-width:440px;position:relative}
+.contact-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px;position:relative}
+.contact-actions a{
+  display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.28);color:#fff;padding:12px 20px;border-radius:12px;
+  font-family:'Sora';font-weight:600;font-size:.92rem;transition:.2s;
+}
+.contact-actions a:hover{background:#fff;color:var(--blue-deep);transform:translateY(-2px)}
+
+footer{padding:34px 0;text-align:center;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line)}
+footer .mono{color:var(--ink)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .portrait{order:-1}
+  .hero p.lede,.hero-cta,.tags{margin-left:auto;margin-right:auto;justify-content:center}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .proj-grid{grid-template-columns:1fr}
+  .skill-grid{grid-template-columns:1fr}
+  .nav-links{
+    display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;
+    gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 0;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 24px}
+  .nav-toggle{display:block}
+  .lang-toggle{order:1}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body>
 
-  <div class="max-w-3xl mx-auto p-6">
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">Loubna <span>Taleb</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="navlinks">
+      <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+      <a href="#experience" data-fr="Expérience" data-en="Experience">Expérience</a>
+      <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
+      <a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a>
+      <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+      <div class="lang-toggle">
+        <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
 
-    <!-- Header -->
-    <h1 class="text-4xl font-bold text-center mb-4">Loubna Taleb</h1>
-    <p class="text-center text-lg text-gray-600 mb-8">
-      Data Science and Robotics Engineer – Specialized in <b>optimization</b>, and <b>computer vision</b>
-    </p>
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span><span data-fr="Disponible · Île-de-France" data-en="Available · Paris area">Disponible · Île-de-France</span></span>
+      <h1><span data-fr="Bonjour, je suis" data-en="Hi, I'm">Bonjour, je suis</span><br><span class="grad">Loubna Taleb</span></h1>
+      <p class="role" data-fr="Ingénieure de Recherche en Modélisation Mathématique" data-en="Research Engineer in Mathematical Modeling">Ingénieure de Recherche en Modélisation Mathématique</p>
+      <p class="lede" data-fr="Ingénieure ISIMA & titulaire d'un Master Automatique & Robotique. Je conçois des algorithmes d'optimisation, de vision par ordinateur et d'apprentissage automatique — du drone autonome à la modélisation de l'apprentissage des élèves." data-en="ISIMA engineer & holder of a Master's in Automation & Robotics. I design optimization, computer vision and machine learning algorithms — from autonomous drones to modeling student learning.">Ingénieure ISIMA & titulaire d'un Master Automatique & Robotique. Je conçois des algorithmes d'optimisation, de vision par ordinateur et d'apprentissage automatique — du drone autonome à la modélisation de l'apprentissage des élèves.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary" data-fr="Me contacter" data-en="Get in touch">Me contacter</a>
+        <a href="#experience" class="btn btn-ghost" data-fr="Voir mon parcours" data-en="See my journey">Voir mon parcours</a>
+      </div>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Optimization</span>
+        <span class="tag">Computer Vision</span><span class="tag">Robotics</span><span class="tag">LLM</span>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="ring"></div>
+      <img src="assets/profile.jpg" alt="Loubna Taleb" onerror="this.outerHTML='<div class=ph>LT</div>'">
+    </div>
+  </div>
+</header>
 
-    <!-- Accordion Component -->
-    <div class="space-y-4">
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <h2 data-fr="À propos" data-en="About">À propos</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="facts">
+      <div class="fact reveal"><div class="k" data-fr="Poste actuel" data-en="Current role">Poste actuel</div><div class="v">ETIS Lab<small data-fr="Ingénieure de recherche · CY Cergy Paris" data-en="Research Engineer · CY Cergy Paris">Ingénieure de recherche · CY Cergy Paris</small></div></div>
+      <div class="fact reveal"><div class="k" data-fr="Formation" data-en="Education">Formation</div><div class="v">ISIMA + EUPI<small data-fr="Ingénieure + Master Robotique" data-en="Engineering + Master's Robotics">Ingénieure + Master Robotique</small></div></div>
+      <div class="fact reveal"><div class="k" data-fr="Spécialités" data-en="Focus">Spécialités</div><div class="v" data-fr="Optimisation & IA" data-en="Optimization & AI">Optimisation & IA<small data-fr="Vision, Deep Learning, Robotique" data-en="Vision, Deep Learning, Robotics">Vision, Deep Learning, Robotique</small></div></div>
+      <div class="fact reveal"><div class="k" data-fr="Langues" data-en="Languages">Langues</div><div class="v" data-fr="FR · EN · AR" data-en="FR · EN · AR">FR · EN · AR<small data-fr="Français & Anglais B2" data-en="French & English B2">Français & Anglais B2</small></div></div>
+    </div>
+  </div>
+</section>
 
-      <!-- Education Section -->
-      <div class="border rounded-2xl shadow">
-        <button class="w-full flex justify-between items-center px-4 py-3 text-xl font-semibold hover:bg-gray-100"
-                onclick="toggleSection('education')">
-          🎓 Education
-          <span id="education-icon">➕</span>
-        </button>
-        <div id="education" class="hidden px-6 pb-4 space-y-4">
-          <p><b>ISIMA – Clermont-Ferrand (2022–2025)</b><br>
-          Engineering School in Computer Science – Specialization in Optimization and AI<br>
-          GPA: 15/20 (Very Good)</p>
-        
-          <p><b>EUPI – Clermont-Ferrand (2024–2025)</b><br>
-          Master’s Degree in Robotics and Artificial Perception (Double degree)<br>
-          GPA: 15/20 (Very Good)</p>
-        
-          <p><b>CPGE – Morocco, Meknes & Marrakech (2020–2022)</b><br>
-          Preparatory Classes for Engineering Schools (PCSI/PSI*)<br>
-          - <b>PCSI</b>: Ranked among the top students, admitted to PSI* at Ibn Timiya in Marrakech<br>
-          - <b>PSI*</b>: Admitted to ISIMA through the CCINP national entrance exam<br>
-          - Also admitted to EMI (Military School of Engineering, Morocco) with a national ranking of <b>17/910</b></p>
-        
-          <p><b>Baccalaureate – Morocco, ZAIO (2020)</b><br>
-          Scientific Baccalaureate in Physics and Chemistry<br>
-          National GPA: <b>17.55/20</b></p>
+<!-- EXPERIENCE -->
+<section id="experience" class="bg-soft">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2 data-fr="Expérience professionnelle" data-en="Professional Experience">Expérience professionnelle</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="tl">
+
+      <div class="tl-item gold reveal">
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="when" data-fr="Depuis fév. 2026" data-en="Since Feb. 2026">Depuis fév. 2026</span>
+            <span class="org">ETIS Lab — CY Cergy Paris Université</span>
+            <span class="loc" data-fr="Paris, France" data-en="Paris, France">Paris, France</span>
+          </div>
+          <h3 data-fr="CDD — Ingénieure de Recherche" data-en="Research Engineer (fixed-term)">CDD — Ingénieure de Recherche</h3>
+          <ul>
+            <li data-fr="Développement d'<b>algorithmes intelligents de prédiction</b> de la maîtrise des compétences mathématiques à long terme." data-en="Development of <b>intelligent prediction algorithms</b> for long-term mastery of mathematical skills."></li>
+            <li data-fr="Collaboration avec la startup EdTech <b>Prof en Poche</b> (solution MathIA) sur données réelles d'élèves de 9 à 11 ans, et avec l'équipe <b>BIRD du LORIA</b>, dans un projet financé par le P2IA." data-en="Collaboration with EdTech startup <b>Prof en Poche</b> (MathIA solution) on real data from pupils aged 9–11, and with the <b>BIRD team at LORIA</b>, in a P2IA-funded project."></li>
+          </ul>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Machine Learning</span><span class="chip">LLM</span><span class="chip">EdTech</span></div>
         </div>
       </div>
 
-      <!-- Professional Experience Section -->
-      <div class="border rounded-2xl shadow">
-        <button class="w-full flex justify-between items-center px-4 py-3 text-xl font-semibold hover:bg-gray-100"
-                onclick="toggleSection('experience')">
-          💼 Professional Experience
-          <span id="experience-icon">➕</span>
-        </button>
-        <div id="experience" class="hidden px-6 pb-4 space-y-6">
-
-          <!-- TotalEnergies Internship -->
-          <div>
-            <p><b>Internship – Optimization of Drone Inspections in Energy Facilities</b><br>
-            <i>TotalEnergies – April 2025 to September 2025, Pau, France</i></p>
-            <ul class="list-disc list-inside mt-2">
-              <li>Developed <b>automatic mission planning algorithms</b> for drone inspection of georeferenced energy facilities.</li>
-              <li>Designed <b>internal software interfaces</b> to facilitate mission preparation and export of <b>KMZ files</b> compatible with <b>DJI drones</b>.</li>
-              <li>Implemented <b>intelligent planning algorithms</b> (A*, TSP) to maximize drone autonomy.</li>
-              <li><b>Tools:</b> Python, QGIS, Git, CloudCompare, A*, TSP</li>
-              <li><b>Recognition:</b> Commended by the evaluation committee</li>
-            </ul>
-            <div class="mt-2 space-y-2">
-              <img src="assets/stages/TotalEnergies/results1.png" class="rounded-lg">
-              <img src="assets/stages/TotalEnergies/heuristic.png" class="rounded-lg">
-              <img src="assets/stages/TotalEnergies/results2.png" class="rounded-lg">
-            </div>
+      <div class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="when" data-fr="Avr. 2025 — Sept. 2025" data-en="Apr. 2025 — Sep. 2025">Avr. 2025 — Sept. 2025</span>
+            <span class="org">TotalEnergies</span>
+            <span class="loc">Pau, France</span>
           </div>
-
-          <!-- INRAE Internship -->
-          <div>
-            <p><b>Internship – Modeling and Machine Learning</b><br>
-            <i>INRAE – March 2024 to August 2024, Clermont-Ferrand, France</i></p>
-            <ul class="list-disc list-inside mt-2">
-              <li>Developed a decision-support tool for <b>forest management under climate change</b>.</li>
-              <li>Applied <b>genetic algorithms in Java</b> for silvicultural optimization.</li>
-              <li>Conducted <b>predictive modeling in Python</b> for ecological simulations to support <b>sustainable management</b>.</li>
-              <li><b>Tools:</b> Java, Python, PyTorch, Git</li>
-              <li><b>Recognition:</b> Very good evaluation</li>
-              <li>📄 <a href="assets/stages/INRAE/Orale_TALEB_loubna_ZZ2_F4-1.pdf" class="text-blue-600 underline">View presentation (PDF)</a></li>
-              <li>💻 <a href="https://github.com/tlloubna/loubnataleb.github.io/tree/main/assets/stages/INRAE/codes_Inrae" target="_blank" class="text-blue-600 underline">Access INRAE project code on GitHub</a></li>
-            </ul>
-            <div class="mt-2 space-y-2">
-              <img src="assets/stages/INRAE/process1.png" class="rounded-lg">
-              <img src="assets/stages/INRAE/results.png" class="rounded-lg">
-            </div>
-          </div>
-
+          <h3 data-fr="Stage — Optimisation des inspections par drone autonome" data-en="Internship — Autonomous drone inspection optimization">Stage — Optimisation des inspections par drone autonome</h3>
+          <ul>
+            <li data-fr="Développement d'<b>algorithmes de planification de mission</b> (A*, TSP) et d'optimisation de trajectoires pour drones <b>DJI</b> sur sites industriels, réduisant significativement le temps d'inspection." data-en="Development of <b>mission planning algorithms</b> (A*, TSP) and trajectory optimization for <b>DJI</b> drones on industrial sites, significantly reducing inspection time."></li>
+            <li data-fr="Conception d'<b>interfaces internes</b> (Tkinter) dans le logiciel Multifloor pour faciliter la préparation des missions et l'export de fichiers <b>KMZ</b>." data-en="Design of <b>internal interfaces</b> (Tkinter) within the Multifloor software to ease mission preparation and <b>KMZ</b> file export."></li>
+            <li data-fr="Participation à des <b>tests réels en zone ATEX</b> pour valider l'exécution des trajectoires par le drone." data-en="Participation in <b>real ATEX-zone tests</b> to validate the drone's trajectory execution."></li>
+          </ul>
+          <div class="chips"><span class="chip">Python</span><span class="chip">QGIS</span><span class="chip">A* / TSP</span><span class="chip">CloudCompare</span><span class="chip">Git</span></div>
+          <span class="reco">★ <span data-fr="Félicitée par le comité d'évaluation" data-en="Commended by the evaluation committee">Félicitée par le comité d'évaluation</span></span>
         </div>
       </div>
 
-      <!-- Projects Section -->
-      <div class="border rounded-2xl shadow">
-        <button class="w-full flex justify-between items-center px-4 py-3 text-xl font-semibold hover:bg-gray-100"
-                onclick="toggleSection('projects')">
-          🚀 Projects
-          <span id="projects-icon">➕</span>
-        </button>
-        <div id="projects" class="hidden px-6 pb-4 space-y-6">
-
-          <!-- SafeWay Project -->
-          <div>
-            <h3 class="font-bold text-lg">SafeWay – Sopra Steria Hackathon, October 2024</h3>
-            <p>Development of a <b>team web project</b> to find the <b>safest routes for pedestrians</b> based on different user profiles: women, men, disabled people, elderly, etc., using <b>user feedback</b> and city data from <b>Clermont-Ferrand</b>.</p>
-            <p>My role included:</p>
-            <ul class="list-disc list-inside mt-2">
-              <li>Developing <b>Dijkstra heuristics</b> to find the <b>safest and shortest paths</b> with an <b>alpha parameter</b> to balance safety and distance.</li>
-              <li>Creating the <b>graph structure</b> for shortest-path calculations.</li>
-              <li>Designing the <b>first web interface</b> to collect and store user and city data.</li>
-            </ul>
-            <p><b>Results:</b></p>
-            <ul class="list-disc list-inside">
-              <li>1st place for <b>communication</b></li>
-              <li>2nd place for <b>coding part</b></li>
-            </ul>
-            <p>📄 <a href="/assets/Projects/SafeWay/presentationSafeWay.pdf" class="text-blue-600 underline">View presentation (PDF)</a><br>
-            💻 <a href="https://github.com/tlloubna/loubnataleb.github.io/tree/main/assets/Projects/SafeWay/CodesSafeway" target="_blank" class="text-blue-600 underline">SafeWay Codes on GitHub</a></p>
-
-            <video class="mt-2 rounded-lg" width="800" controls>
-              <source src="assets/Projects/SafeWay/demoSafeway.mp4" type="video/mp4">
-            </video>
+      <div class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="when" data-fr="Mars 2024 — Août 2024" data-en="Mar. 2024 — Aug. 2024">Mars 2024 — Août 2024</span>
+            <span class="org">INRAE</span>
+            <span class="loc">Clermont-Ferrand, France</span>
           </div>
-
-          <!-- Mushroom Classification Project -->
-          <div>
-            <h3 class="font-bold text-lg">Mushroom Image Classification Project</h3>
-            <p>The goal of this project was to classify a mushroom dataset into three classes: <code>amanita</code>, <code>oyster</code>, and <code>crimini</code>. We started by visually analyzing the images to understand their characteristics and determine the most suitable neural network for the task. We also reviewed scientific papers on image classification with various dimensions.</p>
-            <p>Based on this research, we tested two pretrained neural network models and adapted them to our dataset. The first model, <b>Inception-V3</b>, achieved excellent results with 95% accuracy on the test set and 99% on the training set. The second model, <b>VGG-16</b>, produced disappointing results and was abandoned.</p>
-            <p>A major challenge was the limitation of Google Colab’s GPU training time (2 hours). To overcome this, we created multiple Colab environments. CPU training was very slow, with one epoch taking over 10 minutes. Despite these constraints, we successfully optimized and validated the Inception model, which showed promising performance for our classification task.</p>
-            <div class="mt-2 space-y-2">
-              <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/rendu_26/Challenge_DL_Loubna_Halima.ipynb" class="rounded-lg">
-              <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/INCEPTION.png" class="rounded-lg">
-              <img src="assets/Projects/Taleb(F4)_ZINEDINE(F2)/VGG.png" class="rounded-lg">
-            </div>
+          <h3 data-fr="Stage — Modélisation sylvicole & Machine Learning" data-en="Internship — Forestry modeling & Machine Learning">Stage — Modélisation sylvicole & Machine Learning</h3>
+          <ul>
+            <li data-fr="Conception d'un <b>outil d'aide à la décision</b> pour la gestion forestière face au changement climatique, en collaboration avec les chercheurs." data-en="Design of a <b>decision-support tool</b> for forest management facing climate change, in collaboration with researchers."></li>
+            <li data-fr="Implémentation d'un <b>algorithme génétique en Java</b> pour identifier les contrôles viables conciliant enjeux <b>écologiques</b> et <b>économiques</b>." data-en="Implementation of a <b>genetic algorithm in Java</b> to identify viable controls balancing <b>ecological</b> and <b>economic</b> stakes."></li>
+            <li data-fr="Développement d'un <b>réseau de neurones</b> pour prédire les décisions de gestion forestière sur un horizon de <b>80 ans</b>." data-en="Development of a <b>neural network</b> to predict forest management decisions over an <b>80-year</b> horizon."></li>
+          </ul>
+          <div class="chips"><span class="chip">Java</span><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">Genetic Algorithm</span></div>
+          <div class="tl-links">
+            <a href="https://tlloubna.github.io/loubnataleb.github.io/assets/stages/INRAE/Orale_TALEB_loubna_ZZ2_F4-1.pdf" target="_blank" rel="noopener"><span data-fr="↗ Voir la présentation (PDF)" data-en="↗ View presentation (PDF)">↗ Voir la présentation (PDF)</span></a>
+            <a href="https://github.com/tlloubna/loubnataleb.github.io/tree/main/assets/stages/INRAE/codes_Inrae" target="_blank" rel="noopener"><span data-fr="↗ Code sur GitHub" data-en="↗ Code on GitHub">↗ Code sur GitHub</span></a>
           </div>
-
         </div>
       </div>
 
     </div>
-
   </div>
+</section>
 
-  <script>
-    function toggleSection(id) {
-      const section = document.getElementById(id);
-      const icon = document.getElementById(id + "-icon");
-      section.classList.toggle("hidden");
-      icon.textContent = section.classList.contains("hidden") ? "➕" : "➖";
-    }
-  </script>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <h2 data-fr="Projets" data-en="Projects">Projets</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="proj-grid">
 
+      <article class="proj reveal">
+        <div class="proj-top"><span class="proj-tag" data-fr="Hackathon · 2024" data-en="Hackathon · 2024">Hackathon · 2024</span></div>
+        <h3>SafeWay</h3>
+        <p data-fr="Application web d'itinéraires sécurisés pour piétons et vélos, adaptée à différents profils (femmes, personnes âgées, à mobilité réduite…), à partir des avis utilisateurs et des données de Clermont-Ferrand. Heuristiques de Dijkstra avec un paramètre alpha équilibrant sécurité et distance, et première interface web de collecte de données." data-en="Web app computing the safest routes for pedestrians and cyclists, tailored to different profiles (women, elderly, reduced mobility…), from user feedback and Clermont-Ferrand city data. Dijkstra heuristics with an alpha parameter balancing safety and distance, plus the first web interface for data collection."></p>
+        <div class="badges">
+          <span class="badge">Python</span><span class="badge">Streamlit</span><span class="badge">Dijkstra</span>
+          <span class="badge win">🏆 1er — Communication</span><span class="badge win">🥈 2e — Code</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://tlloubna.github.io/assets/Projects/SafeWay/presentationSafeWay.pdf" target="_blank" rel="noopener"><span data-fr="↗ Présentation" data-en="↗ Presentation">↗ Présentation</span></a>
+          <a href="https://github.com/tlloubna/loubnataleb.github.io/tree/main/assets/Projects/SafeWay/CodesSafeway" target="_blank" rel="noopener"><span data-fr="↗ Code" data-en="↗ Code">↗ Code</span></a>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-top"><span class="proj-tag" data-fr="Deep Learning · 2025" data-en="Deep Learning · 2025">Deep Learning · 2025</span></div>
+        <h3 data-fr="Challenge Champignon" data-en="Mushroom Challenge">Challenge Champignon</h3>
+        <p data-fr="Classification d'images de champignons en trois classes (amanita, oyster, crimini). Après analyse visuelle et revue d'articles scientifiques, deux modèles pré-entraînés ont été testés : Inception-V3 (95 % de précision en test, 99 % en entraînement) et VGG-16, abandonné. Contrainte clé : le temps GPU limité de Google Colab, contourné via plusieurs environnements. Augmentation de données et fine-tuning." data-en="Mushroom image classification into three classes (amanita, oyster, crimini). After visual analysis and a review of scientific papers, two pretrained models were tested: Inception-V3 (95% test accuracy, 99% training) and VGG-16, which was abandoned. Key constraint: Google Colab's limited GPU time, worked around with multiple environments. Data augmentation and fine-tuning."></p>
+        <div class="badges"><span class="badge">PyTorch</span><span class="badge">CNN</span><span class="badge">Inception-V3</span><span class="badge">Fine-tuning</span></div>
+        <div class="proj-links">
+          <a href="https://github.com/tlloubna/loubnataleb.github.io" target="_blank" rel="noopener"><span data-fr="↗ Voir sur GitHub" data-en="↗ View on GitHub">↗ Voir sur GitHub</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="bg-soft">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <h2 data-fr="Compétences & Formation" data-en="Skills & Education">Compétences & Formation</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card reveal">
+        <h4 data-fr="Langages" data-en="Languages">Langages</h4>
+        <div class="items"><span>Python</span><span>Java</span><span>C</span><span>C++</span><span>Matlab</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h4 data-fr="IA & Data Science" data-en="AI & Data Science">IA & Data Science</h4>
+        <div class="items"><span>PyTorch</span><span>TensorFlow</span><span>NetworkX</span><span>CNN</span><span>LLM</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h4 data-fr="Outils" data-en="Tools">Outils</h4>
+        <div class="items"><span>Git</span><span>VS Code</span><span>QGIS</span><span>CloudCompare</span><span>Blender</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h4 data-fr="Diplômes" data-en="Education">Diplômes</h4>
+        <div class="langs">
+          <div class="lang-row"><span data-fr="Ingénieure ISIMA — Modélisation & Data" data-en="ISIMA Engineering — Modeling & Data">Ingénieure ISIMA</span><span class="lvl">2022–2025</span></div>
+          <div class="lang-row"><span data-fr="Master Robotique & Perception — EUPI" data-en="Master's Robotics & Perception — EUPI">Master Robotique — EUPI</span><span class="lvl">2024–2025</span></div>
+          <div class="lang-row"><span data-fr="CPGE PCSI/PSI* — Maroc" data-en="Preparatory classes PCSI/PSI* — Morocco">CPGE PCSI/PSI*</span><span class="lvl">2020–2022</span></div>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4 data-fr="Langues" data-en="Spoken languages">Langues</h4>
+        <div class="langs">
+          <div class="lang-row"><span data-fr="Français" data-en="French">Français</span><span class="lvl" data-fr="Courant · B2" data-en="Fluent · B2">Courant · B2</span></div>
+          <div class="lang-row"><span data-fr="Anglais" data-en="English">Anglais</span><span class="lvl" data-fr="Courant · B2" data-en="Fluent · B2">Courant · B2</span></div>
+          <div class="lang-row"><span data-fr="Arabe" data-en="Arabic">Arabe</span><span class="lvl" data-fr="Langue maternelle" data-en="Native">Langue maternelle</span></div>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4 data-fr="Atouts" data-en="Strengths">Atouts</h4>
+        <div class="items"><span data-fr="Esprit analytique" data-en="Analytical mind">Esprit analytique</span><span data-fr="Rigueur" data-en="Rigor">Rigueur</span><span data-fr="Apprentissage rapide" data-en="Fast learner">Apprentissage rapide</span><span data-fr="Adaptabilité" data-en="Adaptability">Adaptabilité</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <h2 data-fr="Travaillons ensemble" data-en="Let's work together">Travaillons ensemble</h2>
+      <p data-fr="Ouverte aux opportunités en IA, optimisation, vision par ordinateur et recherche. N'hésitez pas à me contacter." data-en="Open to opportunities in AI, optimization, computer vision and research. Feel free to reach out.">Ouverte aux opportunités en IA, optimisation, vision par ordinateur et recherche. N'hésitez pas à me contacter.</p>
+      <div class="contact-actions">
+        <a href="mailto:loubnataleb2111@gmail.com">✉ loubnataleb2111@gmail.com</a>
+        <a href="https://www.linkedin.com/in/loubna-taleb" target="_blank" rel="noopener">in · LinkedIn</a>
+        <a href="https://github.com/tlloubna" target="_blank" rel="noopener">⌥ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">Loubna Taleb</span> — <span data-fr="Conçu avec soin · 2026" data-en="Crafted with care · 2026">Conçu avec soin · 2026</span>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-'+lang+']').forEach(el=>{
+    el.innerHTML=el.getAttribute('data-'+lang);
+  });
+  document.getElementById('btn-fr').classList.toggle('active',lang==='fr');
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+  try{localStorage.setItem('lang',lang)}catch(e){}
+}
+(function(){
+  let saved='fr';
+  try{saved=localStorage.getItem('lang')||'fr'}catch(e){}
+  setLang(saved);
+})();
+
+// Scroll reveal
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Close mobile menu on link click
+document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
+</script>
 </body>
 </html>
