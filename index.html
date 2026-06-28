@@ -222,6 +222,56 @@ section{padding:74px 0;scroll-margin-top:72px}
 footer{padding:34px 0;text-align:center;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line)}
 footer .mono{color:var(--ink)}
 
+/* ---------- INTERESTS ---------- */
+.interests{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.interest{
+  background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 26px;
+  box-shadow:var(--shadow);transition:.25s;position:relative;overflow:hidden;
+}
+.interest:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#c7d8ec}
+.interest .ic{
+  width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;background:var(--sky);margin-bottom:16px;
+}
+.interest.gold .ic{background:#fdf3e3}
+.interest h3{font-size:1.12rem;font-weight:600;margin-bottom:8px}
+.interest p{font-size:.92rem;color:var(--ink-soft)}
+
+/* ---------- GALLERY ---------- */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery figure{
+  position:relative;border-radius:16px;overflow:hidden;cursor:pointer;
+  aspect-ratio:4/3;box-shadow:var(--shadow);background:linear-gradient(135deg,var(--sky),#fff);
+  border:1px solid var(--line);
+}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery figure:hover img{transform:scale(1.07)}
+.gallery figure::after{
+  content:"⤢";position:absolute;top:10px;right:12px;color:#fff;font-size:1rem;
+  opacity:0;transition:.25s;text-shadow:0 1px 4px rgba(0,0,0,.4);
+}
+.gallery figure:hover::after{opacity:1}
+.gallery .ph-img{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono';font-size:.78rem;color:var(--ink-soft);text-align:center;padding:10px;
+}
+.lightbox{
+  position:fixed;inset:0;z-index:200;background:rgba(10,25,45,.92);
+  display:none;align-items:center;justify-content:center;padding:24px;
+}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:88vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.lightbox .close{
+  position:absolute;top:20px;right:26px;color:#fff;font-size:2.2rem;cursor:pointer;
+  line-height:1;background:none;border:0;
+}
+.lightbox .nav-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.4rem;
+  cursor:pointer;background:none;border:0;padding:10px 18px;opacity:.8;transition:.2s;
+}
+.lightbox .nav-arrow:hover{opacity:1}
+.lightbox .prev{left:8px}.lightbox .next{right:8px}
+
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
 
@@ -233,6 +283,8 @@ footer .mono{color:var(--ink)}
   .facts{grid-template-columns:repeat(2,1fr)}
   .proj-grid{grid-template-columns:1fr}
   .skill-grid{grid-template-columns:1fr}
+  .interests{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
   .nav-links{
     display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;
     gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 0;
@@ -260,6 +312,7 @@ footer .mono{color:var(--ink)}
       <a href="#experience" data-fr="Expérience" data-en="Experience">Expérience</a>
       <a href="#projects" data-fr="Projets" data-en="Projects">Projets</a>
       <a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a>
+      <a href="#interests" data-fr="Passions" data-en="Interests">Passions</a>
       <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
       <div class="lang-toggle">
         <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
@@ -276,7 +329,7 @@ footer .mono{color:var(--ink)}
       <span class="eyebrow"><span class="dot"></span><span data-fr="Disponible · Île-de-France" data-en="Available · Paris area">Disponible · Île-de-France</span></span>
       <h1><span data-fr="Bonjour, je suis" data-en="Hi, I'm">Bonjour, je suis</span><br><span class="grad">Loubna Taleb</span></h1>
       <p class="role" data-fr="Ingénieure de Recherche en Modélisation Mathématique" data-en="Research Engineer in Mathematical Modeling">Ingénieure de Recherche en Modélisation Mathématique</p>
-      <p class="lede" data-fr="Ingénieure ISIMA & titulaire d'un Master Automatique & Robotique. Je conçois des algorithmes d'optimisation, de vision par ordinateur et d'apprentissage automatique du drone autonome à la modélisation de l'apprentissage des élèves." data-en="ISIMA engineer & holder of a Master's in Automation & Robotics. I design optimization, computer vision and machine learning algorithms  from autonomous drones to modeling student learning.">Ingénieure ISIMA & titulaire d'un Master Automatique & Robotique. Je conçois des algorithmes d'optimisation, de vision par ordinateur et d'apprentissage automatique  du drone autonome à la modélisation de l'apprentissage des élèves.</p>
+      <p class="lede" data-fr="Ingénieure ISIMA & titulaire d'un Master Automatique & Robotique. Je conçois des algorithmes d'optimisation, de vision par ordinateur et d'apprentissage automatique — du drone autonome à la modélisation de l'apprentissage des élèves." data-en="ISIMA engineer & holder of a Master's in Automation & Robotics. I design optimization, computer vision and machine learning algorithms — from autonomous drones to modeling student learning.">Ingénieure ISIMA & titulaire d'un Master Automatique & Robotique. Je conçois des algorithmes d'optimisation, de vision par ordinateur et d'apprentissage automatique — du drone autonome à la modélisation de l'apprentissage des élèves.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-primary" data-fr="Me contacter" data-en="Get in touch">Me contacter</a>
         <a href="#experience" class="btn btn-ghost" data-fr="Voir mon parcours" data-en="See my journey">Voir mon parcours</a>
@@ -343,7 +396,7 @@ footer .mono{color:var(--ink)}
             <span class="org">TotalEnergies</span>
             <span class="loc">Pau, France</span>
           </div>
-          <h3 data-fr="Stage - Optimisation des inspections par drone autonome" data-en="Internship - Autonomous drone inspection optimization">Stage — Optimisation des inspections par drone autonome</h3>
+          <h3 data-fr="Stage — Optimisation des inspections par drone autonome" data-en="Internship — Autonomous drone inspection optimization">Stage — Optimisation des inspections par drone autonome</h3>
           <ul>
             <li data-fr="Développement d'<b>algorithmes de planification de mission</b> (A*, TSP) et d'optimisation de trajectoires pour drones <b>DJI</b> sur sites industriels, réduisant significativement le temps d'inspection." data-en="Development of <b>mission planning algorithms</b> (A*, TSP) and trajectory optimization for <b>DJI</b> drones on industrial sites, significantly reducing inspection time."></li>
             <li data-fr="Conception d'<b>interfaces internes</b> (Tkinter) dans le logiciel Multifloor pour faciliter la préparation des missions et l'export de fichiers <b>KMZ</b>." data-en="Design of <b>internal interfaces</b> (Tkinter) within the Multifloor software to ease mission preparation and <b>KMZ</b> file export."></li>
@@ -361,7 +414,7 @@ footer .mono{color:var(--ink)}
             <span class="org">INRAE</span>
             <span class="loc">Clermont-Ferrand, France</span>
           </div>
-          <h3 data-fr="Stage - Modélisation sylvicole & Machine Learning" data-en="Internship - Forestry modeling & Machine Learning">Stage — Modélisation sylvicole & Machine Learning</h3>
+          <h3 data-fr="Stage — Modélisation sylvicole & Machine Learning" data-en="Internship — Forestry modeling & Machine Learning">Stage — Modélisation sylvicole & Machine Learning</h3>
           <ul>
             <li data-fr="Conception d'un <b>outil d'aide à la décision</b> pour la gestion forestière face au changement climatique, en collaboration avec les chercheurs." data-en="Design of a <b>decision-support tool</b> for forest management facing climate change, in collaboration with researchers."></li>
             <li data-fr="Implémentation d'un <b>algorithme génétique en Java</b> pour identifier les contrôles viables conciliant enjeux <b>écologiques</b> et <b>économiques</b>." data-en="Implementation of a <b>genetic algorithm in Java</b> to identify viable controls balancing <b>ecological</b> and <b>economic</b> stakes."></li>
@@ -413,6 +466,13 @@ footer .mono{color:var(--ink)}
         </div>
       </article>
 
+      <article class="proj reveal">
+        <div class="proj-top"><span class="proj-tag" data-fr="Web & Éducation · En continu" data-en="Web & Education · Ongoing">Web & Éducation · En continu</span></div>
+        <h3 data-fr="Outils web pour les élèves" data-en="Web tools for students">Outils web pour les élèves</h3>
+        <p data-fr="Je conçois et développe des sites web pour accompagner les élèves dans leur apprentissage : révision interactive, accès facilité aux ressources et recherche d'annales et de sujets d'examen. L'objectif est de rendre la préparation aux examens plus simple, plus ludique et accessible à tous." data-en="I design and build websites that support students in their learning: interactive revision, easier access to resources, and search for past papers and exam topics. The goal is to make exam preparation simpler, more engaging and accessible to everyone."></p>
+        <div class="badges"><span class="badge">HTML / CSS</span><span class="badge">JavaScript</span><span class="badge" data-fr="EdTech" data-en="EdTech">EdTech</span><span class="badge" data-fr="Pédagogie" data-en="Pedagogy">Pédagogie</span></div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -462,8 +522,43 @@ footer .mono{color:var(--ink)}
   </div>
 </section>
 
+<!-- INTERESTS -->
+<section id="interests">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">05</span>
+      <h2 data-fr="Centres d'intérêt" data-en="Interests">Centres d'intérêt</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="interests">
+      <div class="interest reveal">
+        <div class="ic">📷</div>
+        <h3 data-fr="Photographie" data-en="Photography">Photographie</h3>
+        <p data-fr="J'aime capturer les paysages et les instants de mes voyages. La photographie me pousse à observer autrement et à soigner le détail — une sensibilité que je retrouve dans mon travail." data-en="I love capturing landscapes and moments from my travels. Photography pushes me to observe differently and care about detail — a sensibility I carry into my work.">J'aime capturer les paysages et les instants de mes voyages.</p>
+      </div>
+      <div class="interest gold reveal">
+        <div class="ic">🥾</div>
+        <h3 data-fr="Randonnée" data-en="Hiking">Randonnée</h3>
+        <p data-fr="De temps en temps, je pars en randonnée pour me déconnecter et explorer la nature. C'est mon équilibre entre l'écran et le grand air." data-en="From time to time I go hiking to disconnect and explore nature. It's my balance between the screen and the outdoors.">De temps en temps, je pars en randonnée pour me déconnecter et explorer la nature.</p>
+      </div>
+      <div class="interest reveal">
+        <div class="ic">🎓</div>
+        <h3 data-fr="Aider les élèves" data-en="Helping students">Aider les élèves</h3>
+        <p data-fr="Je crée des sites web pour aider les élèves à apprendre et à trouver des sujets d'examen. Transmettre et rendre les ressources accessibles me tient à cœur." data-en="I build websites to help students learn and find exam topics. Sharing knowledge and making resources accessible matters to me.">Je crée des sites web pour aider les élèves à apprendre et à trouver des sujets d'examen.</p>
+      </div>
+    </div>
+
+    <div class="sec-head reveal" style="margin-top:56px">
+      <span class="sec-num">↳</span>
+      <h2 style="font-size:1.3rem" data-fr="Galerie · mes voyages" data-en="Gallery · my travels">Galerie · mes voyages</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="gallery reveal" id="gallery"></div>
+  </div>
+</section>
+
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section id="contact" class="contact bg-soft">
   <div class="wrap">
     <div class="contact-card reveal">
       <h2 data-fr="Travaillons ensemble" data-en="Let's work together">Travaillons ensemble</h2>
@@ -479,9 +574,17 @@ footer .mono{color:var(--ink)}
 
 <footer>
   <div class="wrap">
-    <span class="mono">Loubna Taleb</span> — <span data-fr="Created in  2026" data-en="Crafted with care · 2026">Conçu avec soin · 2026</span>
+    <span class="mono">Loubna Taleb</span> — <span data-fr="Conçu avec soin · 2026" data-en="Crafted with care · 2026">Conçu avec soin · 2026</span>
   </div>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="close" onclick="closeLightbox()" aria-label="Fermer">×</button>
+  <button class="nav-arrow prev" onclick="stepLightbox(-1)" aria-label="Précédent">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="nav-arrow next" onclick="stepLightbox(1)" aria-label="Suivant">›</button>
+</div>
 
 <script>
 function setLang(lang){
@@ -507,6 +610,48 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 // Close mobile menu on link click
 document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
+
+// ---- GALLERY: load images/photo1..6.jpg, hide any that don't exist ----
+const PHOTO_COUNT=8;            // change this number if you add/remove photos
+const PHOTO_PATH='images/';     // folder where your photos live
+const PHOTO_EXT='.jpeg';         
+const galleryEl=document.getElementById('gallery');
+const loaded=[];                // paths that actually loaded, for the lightbox
+for(let i=1;i<=PHOTO_COUNT;i++){
+  const src=PHOTO_PATH+'photo'+i+PHOTO_EXT;
+  const fig=document.createElement('figure');
+  const img=new Image();
+  img.alt='Photo de voyage '+i;
+  img.loading='lazy';
+  img.onload=()=>{ loaded.push(src); fig.dataset.src=src; fig.onclick=()=>openLightbox(src); };
+  img.onerror=()=>{ fig.remove(); };   // file missing → remove the tile silently
+  img.src=src;
+  fig.appendChild(img);
+  galleryEl.appendChild(fig);
+}
+
+// ---- LIGHTBOX ----
+const lb=document.getElementById('lightbox');
+const lbImg=document.getElementById('lightbox-img');
+let lbIndex=0;
+function openLightbox(src){
+  lbIndex=loaded.indexOf(src);
+  lbImg.src=src; lb.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+function stepLightbox(dir){
+  if(!loaded.length) return;
+  lbIndex=(lbIndex+dir+loaded.length)%loaded.length;
+  lbImg.src=loaded[lbIndex];
+}
+lb.addEventListener('click',e=>{ if(e.target===lb) closeLightbox(); });
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowRight') stepLightbox(1);
+  if(e.key==='ArrowLeft') stepLightbox(-1);
+});
 </script>
 </body>
 </html>
